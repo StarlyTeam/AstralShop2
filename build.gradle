@@ -1,0 +1,40 @@
+plugins {
+    id "java"
+    id "java-library"
+    id "com.github.johnrengelman.shadow" version "7.1.2"
+}
+
+group = "kr.starly.astralshop"
+version = "1.0"
+
+repositories {}
+dependencies {}
+
+subprojects {
+    apply plugin: "java"
+
+    repositories {
+        mavenCentral()
+        mavenLocal()
+        maven { url = "https://repo.starly.kr/releases/" }
+    }
+
+    dependencies {
+        compileOnly "org.jetbrains:annotations:24.1.0"
+        compileOnly "org.projectlombok:lombok:1.18.30"
+        annotationProcessor "org.projectlombok:lombok:1.18.30"
+
+        compileOnly "org.spigotmc:spigot-api:1.12.2"
+    }
+}
+
+task copyJar {
+    doLast {
+        copy {
+            from "AstralShop-main/build/libs/AstralShop-${project.version}.jar"
+            into "output/"
+        }
+    }
+}
+
+build.dependsOn copyJar

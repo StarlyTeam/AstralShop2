@@ -1,0 +1,6 @@
+[submodule "AstralShop2-api"]
+	path = AstralShop2-api
+	url = https://github.com/StarlyTeam/AstralShop2-api
+[submodule "AstralShop2-source"]
+	path = AstralShop2-source
+	url = https://github.com/StarlyTeam/AstralShop2-source

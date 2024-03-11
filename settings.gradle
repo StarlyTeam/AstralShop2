@@ -1,0 +1,3 @@
+rootProject.name = 'AstralShop2'
+
+include "AstralShop-api", "AstralShop-main"
